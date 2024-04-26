@@ -1,0 +1,765 @@
+{
+  "data": [
+    {
+      "id": -1,
+      "type": "search",
+      "className": "bg-white",
+      "nextStep": 0,
+      "data": {
+        "placeholder": "Start typing your query here...",
+        "disabled": true,
+        "rightIcons": [
+          {
+            "id": 0,
+            "icon": "code"
+          },
+          {
+            "id": 1,
+            "icon": "send"
+          }
+        ],
+        "leftIcons": []
+      }
+    },
+    {
+      "id": 0,
+      "type": "choices",
+      "className": "",
+      "children": [
+        {
+          "id": 0,
+          "type": "button",
+          "text": "Top cloud costs by services in production account (#24542)",
+          "disabled": false,
+          "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500 bg-white",
+          "nextStep": 1
+        },
+        {
+          "id": 1,
+          "type": "button",
+          "text": "Which application's costs are increasing the fastest?",
+          "disabled": true,
+          "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+          "nextStep": null
+        },
+        {
+          "id": 2,
+          "type": "button",
+          "text": "How much money are we losing by not moving to graviton instances?",
+          "disabled": true,
+          "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+          "nextStep": null
+        },
+        {
+          "id": 3,
+          "type": "button",
+          "text": "Which are the largest s3 buckets by size?",
+          "disabled": true,
+          "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+          "nextStep": null
+        }
+      ]
+    },
+    {
+      "id": 1,
+      "type": "container",
+      "subType": "question",
+      "className": "",
+      "nextStep": 2,
+      "children": [
+        {
+          "id": 0,
+          "type": "flexbox",
+          "orientation": "row",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "avatar",
+              "src": "",
+              "classNames": ""
+            },
+            {
+              "id": 1,
+              "type": "text",
+              "text": "Top cloud costs by services in production account (#24542)",
+              "classNames": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "type": "snackbar",
+      "className": "",
+      "nextStep": 3,
+      "children": [
+        {
+          "id": 0,
+          "type": "flexbox",
+          "orientation": "row",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "avatar",
+              "src": "",
+              "classNames": ""
+            },
+            {
+              "id": 1,
+              "type": "text",
+              "text": "Generating SQL query",
+              "classNames": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "type": "container",
+      "subType": "answer",
+      "className": "",
+      "nextStep": 4,
+      "children": [
+        {
+          "id": 0,
+          "type": "accordion",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "accordion-question",
+              "className": "",
+              "text": "Query"
+            },
+            {
+              "id": 1,
+              "type": "accordion-answer",
+              "className": "",
+              "children": [
+                {
+                  "id": 0,
+                  "type": "code",
+                  "className": "",
+                  "text": "SELECT\n\tservice,\n\tSUM(cost) AS total_cost\nFROM\n\tcloud_costs\nWHERE\n\taccount_type = 'production (#24542)'\nGROUP_BY\n\tservice\nORDER_BY\n\ttotal_cost DESC;"
+                },
+                {
+                  "id": 1,
+                  "type": "chart-footer",
+                  "className": "",
+                  "children": [
+                    {
+                      "id": 0,
+                      "type": "flexbox",
+                      "orientation": "row",
+                      "className": "justify-between",
+                      "children": [
+                        {
+                          "id": 0,
+                          "type": "text-button",
+                          "className": "text-green-600",
+                          "icon": "copy",
+                          "iconPosition": "left",
+                          "text": "Copy Query"
+                        },
+                        {
+                          "id": 1,
+                          "type": "flexbox",
+                          "orientation": "row",
+                          "className": "n",
+                          "children": [
+                            {
+                              "id": 0,
+                              "type": "today-date",
+                              "text": "Last run on",
+                              "classNames": ""
+                            },
+                            {
+                              "id": 1,
+                              "type": "text-button",
+                              "className": "text-green-600",
+                              "icon": "reload",
+                              "iconPosition": "left",
+                              "text": "Re-run Query"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "type": "snackbar",
+      "className": "",
+      "nextStep": 5,
+      "children": [
+        {
+          "id": 0,
+          "type": "flexbox",
+          "orientation": "row",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "avatar",
+              "src": "",
+              "classNames": ""
+            },
+            {
+              "id": 1,
+              "type": "text",
+              "text": "Compiling data...",
+              "classNames": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "type": "container",
+      "subType": "answer",
+      "className": "",
+      "children": [
+        {
+          "id": 0,
+          "type": "flexbox",
+          "orientation": "row",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "avatar",
+              "src": "",
+              "classNames": ""
+            },
+            {
+              "id": 1,
+              "type": "text",
+              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services;",
+              "classNames": ""
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "type": "accordion",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "accordion-question",
+              "className": "",
+              "text": "Pie Chart"
+            },
+            {
+              "id": 1,
+              "type": "accordion-answer",
+              "className": "",
+              "children": [
+                {
+                  "id": 0,
+                  "type": "pie-chart",
+                  "className": "",
+                  "children": [
+                    {
+                      "id": 0,
+                      "title": "EC2 - 30% ($30,000)",
+                      "percentage": 30
+                    },
+                    {
+                      "id": 1,
+                      "title": "RDS - 20% ($20,000)",
+                      "percentage": 20
+                    },
+                    {
+                      "id": 2,
+                      "title": "S3 - 20% ($20,000)",
+                      "percentage": 20
+                    },
+                    {
+                      "id": 3,
+                      "title": "Opensearch - 10% ($10,000)",
+                      "percentage": 10
+                    },
+                    {
+                      "id": 4,
+                      "title": "Elasticache - 10% ($10,000)",
+                      "percentage": 10
+                    },
+                    {
+                      "id": 5,
+                      "title": "Others - 10% ($10,000)",
+                      "percentage": 10
+                    }
+                  ]
+                },
+                {
+                  "id": 1,
+                  "type": "chart-footer",
+                  "className": "",
+                  "children": [
+                    {
+                      "id": 0,
+                      "type": "flexbox",
+                      "orientation": "row",
+                      "children": [
+                        {
+                          "id": 0,
+                          "type": "text-button",
+                          "className": "text-green-600",
+                          "icon": "copy",
+                          "iconPosition": "left",
+                          "text": "Add to Dashboard"
+                        },
+                        {
+                          "id": 1,
+                          "type": "text-button",
+                          "className": "text-green-600",
+                          "icon": "upload",
+                          "iconPosition": "left",
+                          "text": "Export"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": "accordion",
+          "className": "",
+          "askFeedback": true,
+          "children": [
+            {
+              "id": 0,
+              "type": "accordion-question",
+              "className": "",
+              "text": "You might also want to know"
+            },
+            {
+              "id": 1,
+              "type": "accordion-answer",
+              "className": "",
+              "children": [
+                {
+                  "id": 0,
+                  "type": "choices",
+                  "className": "",
+                  "children": [
+                    {
+                      "id": 0,
+                      "type": "button",
+                      "text": "Which services' costs are rising the fastest?",
+                      "disabled": true,
+                      "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 1,
+                      "type": "button",
+                      "text": "How can I reduce my S3 costs?",
+                      "disabled": true,
+                      "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 2,
+                      "type": "button",
+                      "text": "How can I reduce my RDS costs?",
+                      "disabled": true,
+                      "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 3,
+                      "type": "button",
+                      "text": "How can I reduce my EC2 costs?",
+                      "disabled": false,
+                      "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500 bg-white",
+                      "nextStep": 6
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "type": "container",
+      "subType": "question",
+      "className": "",
+      "nextStep": 7,
+      "children": [
+        {
+          "id": 1,
+          "type": "flexbox",
+          "orientation": "row",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "avatar",
+              "src": "",
+              "classNames": ""
+            },
+            {
+              "id": 1,
+              "type": "text",
+              "text": "How can I reduce my EC2 costs?",
+              "classNames": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "type": "container",
+      "subType": "answer",
+      "className": "",
+      "children": [
+        {
+          "id": 0,
+          "type": "flexbox",
+          "orientation": "row",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "avatar",
+              "src": "",
+              "classNames": ""
+            },
+            {
+              "id": 1,
+              "type": "flexbox",
+              "orientation": "column",
+              "classNames": "",
+              "children": [
+                {
+                  "id": 0,
+                  "type": "text",
+                  "text": "You can save $2500 per month overall in EC2 costs. Click here to access a detailed report",
+                  "classNames": ""
+                },
+                {
+                  "id": 1,
+                  "type": "text",
+                  "text": "Here are your top 2 saving areas",
+                  "classNames": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "type": "accordion",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "accordion-question",
+              "className": "",
+              "text": "Top 2 saving areas"
+            },
+            {
+              "id": 1,
+              "type": "accordion-answer",
+              "className": "",
+              "children": [
+                {
+                  "id": 0,
+                  "type": "flexbox",
+                  "orientation": "column",
+                  "className": "",
+                  "children": [
+                    {
+                      "id": 0,
+                      "type": "flexbox",
+                      "orientation": "column",
+                      "className": "border-2 border-green-700 rounded-md p-4",
+                      "children": [
+                        {
+                          "id": 0,
+                          "type": "text",
+                          "text": "Bucket xyz-logs-1 (production account #12345)",
+                          "className": "font-bold text-left"
+                        },
+                        {
+                          "id": 1,
+                          "type": "text",
+                          "text": "This bucket has 1 TB of data, and it does not use any storage tiers. There is more than 500 GB of data that has not been accessed. You can save $1000 by deleting that data or $700 by moving them to lower tier.",
+                          "className": "text-left"
+                        }
+                      ]
+                    },
+                    {
+                      "id": 1,
+                      "type": "flexbox",
+                      "orientation": "column",
+                      "className": "border-2 border-green-700 rounded-md p-4",
+                      "children": [
+                        {
+                          "id": 0,
+                          "type": "text",
+                          "text": "Bucket abc-logs-1 (production account #12345)",
+                          "className": "font-bold text-left"
+                        },
+                        {
+                          "id": 1,
+                          "type": "text",
+                          "text": "This bucket has abnormally high reads and writes cost of $5000 per month, increasing by the day. Consider reading smaller chunks of data or changing your storage that is more cost effective for reads and writes.",
+                          "className": "text-left"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": "accordion",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "accordion-question",
+              "className": "",
+              "text": "You might also want to know"
+            },
+            {
+              "id": 1,
+              "type": "accordion-answer",
+              "className": "",
+              "children": [
+                {
+                  "id": 0,
+                  "type": "choices",
+                  "className": "",
+                  "children": [
+                    {
+                      "id": 0,
+                      "type": "button",
+                      "text": "Which services' costs are rising the fastest?",
+                      "disabled": true,
+                      "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 1,
+                      "type": "button",
+                      "text": "How can I reduce my S3 costs?",
+                      "disabled": true,
+                      "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 2,
+                      "type": "button",
+                      "text": "How can I reduce my RDS costs?",
+                      "disabled": true,
+                      "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 3,
+                      "type": "button",
+                      "text": "Why are EC2 costs increasing so much?",
+                      "disabled": false,
+                      "className": "border-2 rounded-xl px-4 py-3 text-lg text-left text-slate-500 bg-white",
+                      "nextStep": 8
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "type": "container",
+      "subType": "question",
+      "className": "",
+      "nextStep": 9,
+      "children": [
+        {
+          "id": 1,
+          "type": "flexbox",
+          "orientation": "row",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "avatar",
+              "src": "",
+              "classNames": ""
+            },
+            {
+              "id": 1,
+              "type": "text",
+              "text": "Why are EC2 costs increasing so much?",
+              "classNames": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "type": "container",
+      "subType": "answer",
+      "className": "",
+      "children": [
+        {
+          "id": 0,
+          "type": "flexbox",
+          "orientation": "row",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "avatar",
+              "src": "",
+              "classNames": ""
+            },
+            {
+              "id": 1,
+              "type": "text",
+              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services;",
+              "classNames": ""
+            }
+          ]
+        },
+        {
+          "id": 1,
+          "type": "accordion",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "accordion-question",
+              "className": "",
+              "text": "Dashboard"
+            },
+            {
+              "id": 1,
+              "type": "accordion-answer",
+              "className": "",
+              "children": [
+                {
+                  "id": 0,
+                  "type": "sankey-diagram",
+                  "className": "",
+                  "children": []
+                },
+                {
+                  "id": 1,
+                  "type": "chart-footer",
+                  "className": "",
+                  "children": [
+                    {
+                      "id": 0,
+                      "type": "flexbox",
+                      "orientation": "row",
+                      "children": [
+                        {
+                          "type": "text-button",
+                          "className": "text-green-600",
+                          "icon": "copy",
+                          "iconPosition": "left",
+                          "text": "Add to Dashboard"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "type": "accordion",
+          "className": "",
+          "children": [
+            {
+              "id": 0,
+              "type": "accordion-question",
+              "className": "",
+              "text": "You might also want to know"
+            },
+            {
+              "id": 1,
+              "type": "accordion-answer",
+              "className": "",
+              "children": [
+                {
+                  "id": 0,
+                  "type": "choices",
+                  "className": "",
+                  "children": [
+                    {
+                      "id": 0,
+                      "type": "button",
+                      "text": "Which services' costs are rising the fastest?",
+                      "disabled": true,
+                      "className": "",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 1,
+                      "type": "button",
+                      "text": "How can I reduce my S3 costs?",
+                      "disabled": true,
+                      "className": "",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 2,
+                      "type": "button",
+                      "text": "How can I reduce my RDS costs?",
+                      "disabled": true,
+                      "className": "",
+                      "nextStep": null
+                    },
+                    {
+                      "id": 3,
+                      "type": "button",
+                      "text": "Why are EC2 costs increasing so much?",
+                      "disabled": true,
+                      "className": "",
+                      "nextStep": null
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
