@@ -18,7 +18,11 @@ export const Accordion = (props) => {
   return (
     <div className="flex flex-col gap-4">
       {/* Question */}
-      <div className="flex items-center gap-2">
+      <div
+        className="flex items-center gap-2"
+        role="button"
+        onClick={() => setExpandAccordion((prev) => !prev)}
+      >
         <Typography
           {...accordionQuestion}
           className={`${props.className} text-sm text-slate-500 w-max`}
@@ -26,7 +30,7 @@ export const Accordion = (props) => {
 
         <div className="connector grow border-t-2 h-1"></div>
 
-        <button onClick={() => setExpandAccordion((prev) => !prev)}>
+        <button>
           {expandAccordion ? (
             <GoChevronUp className="text-slate-400" size={20} />
           ) : (
