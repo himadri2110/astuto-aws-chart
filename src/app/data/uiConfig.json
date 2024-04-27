@@ -229,7 +229,7 @@
             {
               "id": 1,
               "type": "text",
-              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services;",
+              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services:",
               "classNames": ""
             }
           ]
@@ -439,7 +439,7 @@
                 {
                   "id": 0,
                   "type": "text",
-                  "text": "You can save $2500 per month overall in EC2 costs. Click here to access a detailed report",
+                  "text": "You can save $2500 per month overall in EC2 costs. Click here to access a detailed report.",
                   "classNames": "w-full text-left"
                 },
                 {
@@ -631,7 +631,7 @@
             {
               "id": 1,
               "type": "text",
-              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services;",
+              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services:",
               "classNames": ""
             }
           ]

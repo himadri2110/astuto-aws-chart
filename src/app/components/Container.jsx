@@ -2,7 +2,6 @@ import { renderUI } from "../utils/ui.utils";
 
 export const Container = (props) => {
   const type = props?.subType;
-  console.log(props, "container");
 
   return (
     <div

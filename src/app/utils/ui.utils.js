@@ -1,16 +1,18 @@
-import { Choices } from "../components/Choices";
-import { Search } from "../components/Search";
-import { Container } from "../components/Container";
-import { Flexbox } from "../components/Flexbox";
-import { Typography } from "../components/Typography";
-import { Avatar } from "../components/Avatar";
-import { Snackbar } from "../components/Snackbar";
-import { Accordion } from "../components/Accordion";
-import { Code } from "../components/Code";
-import { ChartFooter } from "../components/ChartFooter";
-import { Button } from "../components/Button";
-import { PieChart } from "../components/PieChart";
-import { SankeyChart } from "../components/SankeyChart";
+import {
+  Choices,
+  Search,
+  Container,
+  Flexbox,
+  Typography,
+  Avatar,
+  Snackbar,
+  Accordion,
+  Code,
+  ChartFooter,
+  Button,
+  PieChart,
+  SankeyChart,
+} from "../components";
 
 export const getCurrentStepData = (step, data) => {
   return data.find((item) => item.id === step);
