@@ -2,6 +2,7 @@ import { useState } from "react";
 import { renderUI } from "../utils/ui.utils";
 import { Typography } from "./Typography";
 import { GoChevronDown, GoChevronUp } from "react-icons/go";
+import { motion } from "framer-motion";
 
 export const Accordion = (props) => {
   const [expandAccordion, setExpandAccordion] = useState(true);
@@ -13,7 +14,7 @@ export const Accordion = (props) => {
   const accordionAnswer = props?.children.find(
     (child) => child.type === "accordion-answer"
   );
-  console.log(accordionQuestion, "accordion typo");
+
   return (
     <div className="flex flex-col gap-4">
       {/* Question */}
@@ -36,7 +37,18 @@ export const Accordion = (props) => {
 
       {/* Answer */}
       {expandAccordion ? (
-        <div>{accordionAnswer?.children.map(renderUI)}</div>
+        <motion.div
+          initial="collapsed"
+          animate="open"
+          exit="collapsed"
+          variants={{
+            open: { opacity: 1, height: "auto" },
+            collapsed: { opacity: 0, height: 0 },
+          }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
+        >
+          {accordionAnswer?.children.map(renderUI)}
+        </motion.div>
       ) : null}
     </div>
   );

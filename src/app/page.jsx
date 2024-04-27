@@ -16,8 +16,6 @@ export default function Home() {
     const getUniqueSteps = (prev) =>
       new Set([...prev, getCurrentStepData(currentStep, uiConfig.data)]);
 
-    console.log("effect");
-
     setTotalData((prev) => Array.from(getUniqueSteps(prev)));
   }, [currentStep]);
 
@@ -35,10 +33,18 @@ export default function Home() {
       if (lastItem?.nextStep) {
         setCurrentStep(lastItem.nextStep);
       }
-    }, 1000);
+    }, 1500);
 
     return () => clearInterval(intervalId);
   }, [totalData, setCurrentStep]);
+
+  useEffect(() => {
+    window.scrollTo({
+      left: 0,
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [totalData, currentStep]);
 
   return (
     <Layout>
