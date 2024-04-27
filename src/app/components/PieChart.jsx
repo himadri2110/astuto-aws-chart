@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PieChart, {
   Legend,
   Series,
@@ -6,12 +6,19 @@ import PieChart, {
   Font,
   Connector,
 } from "devextreme-react/pie-chart";
+import { useStep } from "../contexts/stepContext";
 
 const customizeText = (arg) => {
   return `${arg?.argumentText} - ${arg?.percentText} (${arg?.valueText})`;
 };
 
 const PieChartComponent = (props) => {
+  const { setAskFeedback } = useStep();
+
+  useEffect(() => {
+    setAskFeedback(true);
+  }, []);
+
   return (
     <PieChart id="pie" palette="Dark Violet" dataSource={props?.children}>
       <Legend

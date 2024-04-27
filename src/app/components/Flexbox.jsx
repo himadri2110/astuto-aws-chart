@@ -1,7 +1,6 @@
 import { renderUI } from "../utils/ui.utils";
 
 export const Flexbox = (props) => {
-  console.log(props, "flex");
   return (
     <div
       className={`${props.className} flex ${

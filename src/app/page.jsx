@@ -5,9 +5,10 @@ import { Layout } from "./components/Layout";
 import uiConfig from "./data/uiConfig.json";
 import { getCurrentStepData, renderUI } from "./utils/ui.utils";
 import { useStep } from "./contexts/stepContext";
+import { Feedback } from "./components/Feedback";
 
 export default function Home() {
-  const { currentStep, setCurrentStep } = useStep();
+  const { currentStep, setCurrentStep, askFeedback } = useStep();
 
   const [totalData, setTotalData] = useState([]);
 
@@ -15,8 +16,6 @@ export default function Home() {
     // Filtering out unique steps due to effect running twice causing duplicate data
     const getUniqueSteps = (prev) =>
       new Set([...prev, getCurrentStepData(currentStep, uiConfig.data)]);
-
-    console.log("effect");
 
     setTotalData((prev) => Array.from(getUniqueSteps(prev)));
   }, [currentStep]);
@@ -35,15 +34,25 @@ export default function Home() {
       if (lastItem?.nextStep) {
         setCurrentStep(lastItem.nextStep);
       }
-    }, 1000);
+    }, 1500);
 
     return () => clearInterval(intervalId);
   }, [totalData, setCurrentStep]);
+
+  useEffect(() => {
+    window.scrollTo({
+      left: 0,
+      top: document.body.scrollHeight,
+      behavior: "smooth",
+    });
+  }, [totalData, currentStep]);
 
   return (
     <Layout>
       <div className="flex flex-col gap-4 mb-24 mt-auto">
         {totalData.map(renderUI)}
+
+        {askFeedback && <Feedback />}
       </div>
     </Layout>
   );

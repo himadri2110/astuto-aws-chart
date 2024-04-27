@@ -3,22 +3,11 @@
     {
       "id": -1,
       "type": "search",
-      "className": "bg-white",
+      "className": "bg-white shadow-2xl",
       "nextStep": 0,
       "data": {
         "placeholder": "Start typing your query here...",
-        "disabled": true,
-        "rightIcons": [
-          {
-            "id": 0,
-            "icon": "code"
-          },
-          {
-            "id": 1,
-            "icon": "send"
-          }
-        ],
-        "leftIcons": []
+        "disabled": true
       }
     },
     {
@@ -173,12 +162,6 @@
                           "children": [
                             {
                               "id": 0,
-                              "type": "today-date",
-                              "text": "Last run on",
-                              "classNames": ""
-                            },
-                            {
-                              "id": 1,
                               "type": "text-button",
                               "className": "text-green-600",
                               "icon": "reload",
@@ -246,7 +229,7 @@
             {
               "id": 1,
               "type": "text",
-              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services;",
+              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services:",
               "classNames": ""
             }
           ]
@@ -456,7 +439,7 @@
                 {
                   "id": 0,
                   "type": "text",
-                  "text": "You can save $2500 per month overall in EC2 costs. Click here to access a detailed report",
+                  "text": "You can save $2500 per month overall in EC2 costs. Click here to access a detailed report.",
                   "classNames": "w-full text-left"
                 },
                 {
@@ -648,7 +631,7 @@
             {
               "id": 1,
               "type": "text",
-              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services;",
+              "text": "Your production account (#24542) has accumulated costs of $100,000 over the past month, here is a spread of cloud costs by services:",
               "classNames": ""
             }
           ]
