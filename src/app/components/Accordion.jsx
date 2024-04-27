@@ -20,7 +20,7 @@ export const Accordion = (props) => {
       <div className="flex items-center gap-2">
         <Typography
           {...accordionQuestion}
-          className={`${props.className} text-sm text-slate-500`}
+          className={`${props.className} text-sm text-slate-500 w-max`}
         />
 
         <div className="connector grow border-t-2 h-1"></div>

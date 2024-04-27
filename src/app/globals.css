@@ -2,12 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* html,
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
-} */
+body {
+  background-color: rgb(241 245 249);
+}
 
 @layer utilities {
   .text-balance {

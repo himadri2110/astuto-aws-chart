@@ -5,7 +5,9 @@ export const Avatar = (props) => {
     <Image
       src={props.src}
       alt=""
-      className={`${props.className} h-5 w-5 rounded-md`}
+      width={30}
+      height={30}
+      className={`${props.className} rounded-md`}
     />
   );
 };

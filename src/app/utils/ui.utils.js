@@ -9,13 +9,15 @@ import { Accordion } from "../components/Accordion";
 import { Code } from "../components/Code";
 import { ChartFooter } from "../components/ChartFooter";
 import { Button } from "../components/Button";
+import { PieChart } from "../components/PieChart";
+import { SankeyChart } from "../components/SankeyChart";
 
 export const getCurrentStepData = (step, data) => {
   return data.find((item) => item.id === step);
 };
 
 export const renderUI = (data) => {
-  switch (data.type) {
+  switch (data?.type) {
     case "choices":
       return <Choices key={data.id} {...data} />;
     case "search":
@@ -41,6 +43,11 @@ export const renderUI = (data) => {
 
     case "text-button":
       return <Button.Text key={data.id} {...data} />;
+
+    case "pie-chart":
+      return <PieChart key={data.id} {...data} />;
+    case "sankey-chart":
+      return <SankeyChart key={data.id} {...data} />;
     default:
       return null;
   }

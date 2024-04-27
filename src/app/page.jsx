@@ -21,8 +21,6 @@ export default function Home() {
     setTotalData((prev) => Array.from(getUniqueSteps(prev)));
   }, [currentStep]);
 
-  console.log(currentStep, totalData, "curr");
-
   useEffect(() => {
     // Show 1st two steps on initial render (search & choices)
     const timerId = setTimeout(() => setCurrentStep((prev) => prev + 1), 1000);
@@ -37,7 +35,7 @@ export default function Home() {
       if (lastItem?.nextStep) {
         setCurrentStep(lastItem.nextStep);
       }
-    }, 2000);
+    }, 1000);
 
     return () => clearInterval(intervalId);
   }, [totalData, setCurrentStep]);
