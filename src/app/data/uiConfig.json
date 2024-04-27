@@ -3,22 +3,11 @@
     {
       "id": -1,
       "type": "search",
-      "className": "bg-white",
+      "className": "bg-white shadow-2xl",
       "nextStep": 0,
       "data": {
         "placeholder": "Start typing your query here...",
-        "disabled": true,
-        "rightIcons": [
-          {
-            "id": 0,
-            "icon": "code"
-          },
-          {
-            "id": 1,
-            "icon": "send"
-          }
-        ],
-        "leftIcons": []
+        "disabled": true
       }
     },
     {
@@ -173,12 +162,6 @@
                           "children": [
                             {
                               "id": 0,
-                              "type": "today-date",
-                              "text": "Last run on",
-                              "classNames": ""
-                            },
-                            {
-                              "id": 1,
                               "type": "text-button",
                               "className": "text-green-600",
                               "icon": "reload",
